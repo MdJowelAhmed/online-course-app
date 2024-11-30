@@ -1,0 +1,73 @@
+.weProvide {
+    background: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+  
+    .contentContainer {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .textContent {
+      flex: 1 1 50%;
+    }
+  
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+  
+    .featuresList {
+      list-style: none;
+  
+      li {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+      }
+  
+      .highlighted {
+        color: #0070f3;
+  
+        .description {
+          font-size: 1rem;
+          color: #555;
+          margin-top: 5px;
+        }
+      }
+    }
+  
+    .learnMoreBtn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0070f3;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+    .imageContent {
+      flex: 1 1 40%;
+      position: relative;
+  
+      img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+  
+      .badgeIcon {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: #0070f3;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 50%;
+      }
+    }
+  }
+  

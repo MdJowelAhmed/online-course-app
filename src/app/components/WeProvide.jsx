@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import styles from "@/app/style/WeProvide.module.scss";
 
 const WeProvide = () => {
   return (
