@@ -1,0 +1,49 @@
+@import './variables';
+@import './mixins';
+
+.navbar {
+  @include center;
+  justify-content: space-between;
+  background-color: $white;
+  padding: $spacing-unit 0;
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .navLinks {
+    display: flex;
+    gap: 1.5rem;
+
+    li {
+      list-style: none;
+      cursor: pointer;
+      color: $text-color;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .loginButton {
+    background-color: $primary-color;
+    color: $white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+
+  @include respond-to("md") {
+    flex-direction: column;
+    .navLinks {
+      flex-direction: column;
+    }
+  }
+}

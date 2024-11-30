@@ -1,69 +1,45 @@
-import { FaInstagram, FaFacebook, FaDiscord, FaTimes } from "react-icons/fa";
+import React from "react";
 import styles from "@/app/style/Footer.module.scss";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.footerGrid}>
-        {/* Categories Section */}
-        <div>
-          <h4>Categories</h4>
-          <ul>
-            <li>Nutrition and diet</li>
-            <li>Fitness training</li>
-            <li>Mindfulness</li>
-            <li>Mental health</li>
-            <li>Personal growth</li>
-            <li>Social well-being</li>
-          </ul>
+      <div className="container">
+        <div className={styles.footerGrid}>
+          <div className={styles.branding}>
+            <h3>EduPath</h3>
+            <p>Your journey to holistic learning and mindfulness starts here.</p>
+          </div>
+          <div className={styles.quickLinks}>
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/courses">Courses</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/faq">FAQs</a></li>
+            </ul>
+          </div>
+          <div className={styles.socialMedia}>
+            <h4>Connect with Us</h4>
+            <div className={styles.icons}>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <FaFacebookF />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <FaTwitter />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <FaInstagram />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <FaLinkedin />
+              </a>
+            </div>
+          </div>
         </div>
-
-        {/* About Section */}
-        <div>
-          <h4>About</h4>
-          <ul>
-            <li>About us</li>
-            <li>Our partners</li>
-            <li>Investors</li>
-            <li>Career</li>
-          </ul>
-        </div>
-
-        {/* Resources Section */}
-        <div>
-          <h4>Resources</h4>
-          <ul>
-            <li>FAQ</li>
-            <li>Refund policies</li>
-            <li>Terms and conditions</li>
-            <li>Cookie</li>
-            <li>Latest posts</li>
-          </ul>
-        </div>
-
-        {/* Support Section */}
-        <div>
-          <h4>Support</h4>
-          <ul>
-            <li>Get in touch</li>
-            <li>Visit our forum</li>
-          </ul>
-        </div>
+        <p>© 2024 EduPath. All rights reserved.</p>
       </div>
-
-      {/* Social Media Section */}
-      <div className={styles.socialMedia}>
-        <h4>Join our official channels</h4>
-        <div className={styles.icons}>
-          <FaInstagram />
-          <FaTimes />
-          <FaFacebook />
-          <FaDiscord />
-        </div>
-      </div>
-
-      {/* Copyright */}
-      <p>© 2024 EduPath. All rights reserved</p>
     </footer>
   );
 };

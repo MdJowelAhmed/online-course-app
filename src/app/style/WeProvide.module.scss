@@ -1,73 +1,105 @@
+// Variables for consistent colors, padding, etc.
+$primary-color: #0070f3;
+$secondary-color: #fff;
+$background-color: #f9fafb;
+$text-color: #333;
+
+// Mixin for flexbox alignment
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Container styles for consistent width
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+// Responsive mixin
+@mixin responsive($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
 .weProvide {
-    background: #fff;
-    padding: 40px 20px;
-    display: flex;
-    justify-content: center;
-  
-    .contentContainer {
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      align-items: center;
-      gap: 20px;
-    }
-  
-    .textContent {
-      flex: 1 1 50%;
-    }
-  
+  background: $background-color;
+  padding: 40px 20px;
+
+  .contentContainer {
+    @include flex-center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .textContent {
+    flex: 1 1 50%;
     h2 {
       font-size: 2rem;
       margin-bottom: 20px;
     }
-  
+
     .featuresList {
       list-style: none;
-  
       li {
         margin-bottom: 15px;
         font-size: 1.2rem;
-      }
-  
-      .highlighted {
-        color: #0070f3;
-  
-        .description {
-          font-size: 1rem;
-          color: #555;
-          margin-top: 5px;
+
+        &.highlighted {
+          color: $primary-color;
+
+          .description {
+            font-size: 1rem;
+            color: $text-color;
+            margin-top: 5px;
+          }
         }
       }
     }
-  
+
     .learnMoreBtn {
       margin-top: 20px;
       padding: 10px 20px;
-      background-color: #0070f3;
-      color: #fff;
+      background-color: $primary-color;
+      color: $secondary-color;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-    }
-  
-    .imageContent {
-      flex: 1 1 40%;
-      position: relative;
-  
-      img {
-        max-width: 100%;
-        border-radius: 10px;
-      }
-  
-      .badgeIcon {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background: #0070f3;
-        color: #fff;
-        padding: 5px 10px;
-        border-radius: 50%;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
       }
     }
   }
-  
+
+  .imageContent {
+    flex: 1 1 40%;
+    position: relative;
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .badgeIcon {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: $primary-color;
+      color: $secondary-color;
+      padding: 5px 10px;
+      border-radius: 50%;
+    }
+  }
+
+  @include responsive(768px) {
+    .contentContainer {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+}

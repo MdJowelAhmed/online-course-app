@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["..\\src\\app\\style\\globals.scss"],"names":[],"mappings":"AAAA,KACI,iCACA,SACA,UAGF,WACE,UACA,iBACA","sourcesContent":["body {\r\n    font-family: \"Poppins\", sans-serif;\r\n    margin: 0;\r\n    padding: 0;\r\n  }\r\n  \r\n  .container {\r\n    width: 90%;\r\n    max-width: 1200px;\r\n    margin: auto;\r\n  }\r\n  "]}

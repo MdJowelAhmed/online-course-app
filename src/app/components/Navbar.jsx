@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/app/style/HeroSection.module.scss";
+import styles from "@/app/style/Navbar.module.scss";
 
 const Navbar = () => {
   return (

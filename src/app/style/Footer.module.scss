@@ -1,68 +1,93 @@
+@import './variables';
+@import './mixins';
 .footer {
-    background-color: #f9fafb;
-    color: #333;
-    padding: 2rem 1rem;
-    text-align: center;
+    background: $background-color;
+    color: $text-color;
+    padding: 40px 20px;
   
     .footerGrid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 2rem;
-      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
   
-      h4 {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-bottom: 0.5rem;
+      .branding {
+        flex: 1;
+        h3 {
+          font-size: 1.8rem;
+          color: $primary-color;
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 1rem;
+          line-height: 1.6;
+        }
       }
   
-      ul {
-        list-style: none;
-        padding: 0;
-  
-        li {
-          margin: 0.5rem 0;
-          font-size: 0.9rem;
-          color: #555;
-          cursor: pointer;
-  
-          &:hover {
-            color: #000;
+      .quickLinks {
+        flex: 1;
+        h4 {
+          font-size: 1.5rem;
+          margin-bottom: 10px;
+        }
+        ul {
+          list-style: none;
+          padding: 0;
+          li {
+            margin-bottom: 10px;
+            a {
+              color: $primary-color;
+              text-decoration: none;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
           }
         }
       }
-    }
   
-    .socialMedia {
-      margin-top: 2rem;
-  
-      h4 {
-        margin-bottom: 1rem;
-        font-size: 1.1rem;
-        font-weight: bold;
-      }
-  
-      .icons {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-  
-        svg {
+      .socialMedia {
+        flex: 1;
+        h4 {
           font-size: 1.5rem;
-          color: #555;
-          cursor: pointer;
+          margin-bottom: 10px;
+        }
+        .icons {
+          display: flex;
+          gap: 10px;
+          svg {
+            font-size: 1.8rem;
+            color: $text-color;
+            transition: color 0.3s;
   
-          &:hover {
-            color: #000;
+            &:hover {
+              color: $primary-color;
+            }
           }
         }
       }
     }
   
     p {
-      margin-top: 2rem;
-      font-size: 0.85rem;
-      color: #888;
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: darken($text-color, 20%);
     }
+  
+    @include respond-to(medium) {
+        text-align: center;
+      
+        .footerGrid {
+          flex-direction: column;
+          align-items: center;
+      
+          .branding, .quickLinks, .socialMedia {
+            flex: unset;
+            text-align: center;
+          }
+        }
+      }
   }
   

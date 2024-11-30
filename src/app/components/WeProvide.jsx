@@ -3,8 +3,8 @@ import styles from "@/app/style/WeProvide.module.scss";
 
 const WeProvide = () => {
   return (
-    <div>
-      <section className={styles.weProvide}>
+    <section className={styles.weProvide}>
+      <div className="container">
         <div className={styles.contentContainer}>
           <div className={styles.textContent}>
             <h2>We provide...</h2>
@@ -12,32 +12,22 @@ const WeProvide = () => {
               <li>Personalized routine</li>
               <li>Follow-up after completing courses</li>
               <li className={styles.highlighted}>
-                <span className={styles.checkIcon}>✔</span> Access to additional
-                resources
+                <span>✔ Access to additional resources</span>
                 <p className={styles.description}>
-                  We offer access to a variety of additional resources to
-                  enhance your experience, including exclusive tools, guides,
-                  and support materials designed to help you achieve your goals
-                  more effectively.
+                  We offer exclusive tools, guides, and materials to help you achieve your goals.
                 </p>
               </li>
               <li>Free community support</li>
             </ul>
-            <button className={styles.learnMoreBtn}>
-              Learn More About Our Services
-            </button>
+            <button className={styles.learnMoreBtn}>Learn More About Our Services</button>
           </div>
           <div className={styles.imageContent}>
-            <Image 
-            src="/WeProvide.png" 
-            alt="Mother and Daughter" 
-            height={200}
-            width={200}/>
+            <Image src="/WeProvide.png" alt="Mother and Daughter" height={400} width={400} />
             <div className={styles.badgeIcon}>✔</div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
