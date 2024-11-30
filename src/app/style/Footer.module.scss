@@ -1,0 +1,68 @@
+.footer {
+    background-color: #f9fafb;
+    color: #333;
+    padding: 2rem 1rem;
+    text-align: center;
+  
+    .footerGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      text-align: left;
+  
+      h4 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+  
+      ul {
+        list-style: none;
+        padding: 0;
+  
+        li {
+          margin: 0.5rem 0;
+          font-size: 0.9rem;
+          color: #555;
+          cursor: pointer;
+  
+          &:hover {
+            color: #000;
+          }
+        }
+      }
+    }
+  
+    .socialMedia {
+      margin-top: 2rem;
+  
+      h4 {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+  
+      .icons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+  
+        svg {
+          font-size: 1.5rem;
+          color: #555;
+          cursor: pointer;
+  
+          &:hover {
+            color: #000;
+          }
+        }
+      }
+    }
+  
+    p {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #888;
+    }
+  }
+  
