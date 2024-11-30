@@ -1,0 +1,62 @@
+.container {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .courseGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+  
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+  
+  .cardImage {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .cardContent {
+    padding: 1rem;
+  
+    .category {
+      font-size: 0.85rem;
+      color: #999;
+    }
+  
+    h3 {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+    }
+  
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      color: #333;
+  
+      .author {
+        font-size: 0.9rem;
+      }
+  
+      .price {
+        font-weight: bold;
+        font-size: 1rem;
+        color: #0070f3;
+      }
+    }
+  }
+  
