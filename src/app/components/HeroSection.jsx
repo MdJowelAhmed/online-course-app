@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "@/app/style/HeroSection.module.scss";
+import "@/app/style/globals.scss";
+
 import Image from "next/image";
 
 const HeroSection = () => {

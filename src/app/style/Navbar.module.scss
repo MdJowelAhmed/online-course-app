@@ -2,48 +2,102 @@
 @import './mixins';
 
 .navbar {
-  @include center;
-  justify-content: space-between;
-  background-color: $white;
-  padding: $spacing-unit 0;
-
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-
-  .navLinks {
     display: flex;
-    gap: 1.5rem;
-
-    li {
-      list-style: none;
-      cursor: pointer;
-      color: $text-color;
-
-      &:hover {
-        color: $primary-color;
-      }
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: $white;
+  }
+  
+  .navLinks {
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: $white;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  
+    &.navLinksActive {
+      display: flex; // Ensure this makes it visible
     }
   }
-
+  
+  
+  .menuIcon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  
+    @media (max-width: 1170px) {
+      display: block;
+    }
+  }
+  
+  .shoppingIcon {
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+  
+    @media (max-width: 1170px) {
+      display: none;
+    }
+  }
+  
   .loginButton {
-    background-color: $primary-color;
-    color: $white;
     padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #ffffff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-
+  
     &:hover {
-      background-color: darken($primary-color, 10%);
+      background-color: #0056b3;
     }
   }
-
-  @include respond-to("md") {
-    flex-direction: column;
-    .navLinks {
-      flex-direction: column;
-    }
+  
+  .dropdown {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
-}
+  
+  .subMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    list-style: none;
+    padding: 0.5rem 0;
+    min-width: 150px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .subMenu li {
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+  }
+  
+  .subMenu li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .dropdown:hover .subMenu {
+    display: block;
+  }
+  
+  .rightSection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  

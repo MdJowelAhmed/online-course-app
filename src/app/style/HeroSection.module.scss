@@ -4,9 +4,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 20px;
   
     .heroText {
+        max-width: 458px;
       h1 {
         font-size: 2.5rem;
         color: $text-color;
@@ -41,8 +42,11 @@
     }
   
     .heroImage {
+        width: 648px;
+        height: 760px;
       img {
         width: 100%;
+        height: 100%;
         border-radius: 10px;
       }
     }
