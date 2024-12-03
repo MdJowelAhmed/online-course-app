@@ -1,45 +1,162 @@
-@import './variables';
-@import './mixins';
+/* Testimonials Section */
 .testimonials {
-    background: $background-color;
-    padding: 40px 20px;
+  margin-top: 150px;
+
+  /* Heading for the testimonials section */
+  .heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 60px;
     text-align: center;
-  
-    h2 {
-      font-size: 2rem;
+    max-width: 500px;
+    margin: auto;
+  }
+
+  /* Container for all testimonial cards */
+  .testimonialCards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 60px;
+    padding: 0 10px;
+
+    /* Individual testimonial card */
+    .testimonialCard {
+      background: #9998e133;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 250px;
+      height: max-content;
+      transition: all 0.3s ease;
       margin-bottom: 30px;
-    }
-  
-    .testimonialCards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-  
-      .testimonialCard {
-        background: $secondary-color;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        text-align: left;
-  
-        p {
-          font-size: 1rem;
-          color: $text-color;
-          margin-bottom: 10px;
-        }
-  
-        h3 {
-          font-size: 1.2rem;
-          color: $primary-color;
-          font-weight: bold;
+
+      /* Circle container for pagination or indicators */
+      .circleContainer {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 30px;
+
+        /* Individual circle */
+        .circle {
+          width: 20px;
+          height: 20px;
+          border: 4px solid blue;
+          border-radius: 50%;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: #f39c12;
+            transform: scale(1.2);
+          }
         }
       }
-    }
-  
-    @include respond-to(medium) {
-      .testimonialCards {
-        grid-template-columns: 1fr;
+
+      /* Avatar container */
+      .avatarContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+
+        /* Avatar image */
+        .avatar {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-bottom: 10px;
+        }
+
+        /* Author name styling */
+        .authorName {
+          font-size: 1rem;
+          font-weight: bold;
+          color: #2c3e50;
+        }
+
+        /* Quote mark styling */
+        .quoteMark {
+          font-size: 3rem;
+          color: #f39c12;
+          position: absolute;
+          top: -10px;
+          right: -20px;
+        }
+      }
+
+      /* Quote text styling */
+      .quote {
+        font-size: 0.95rem;
+        color: #7f8c8d;
+        margin-top: 20px;
+        line-height: 1.6;
       }
     }
   }
-  
+
+  /* Circle container for navigation or pagination */
+  .circleContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+
+    /* Individual circle for navigation */
+    .circle {
+      width: 10px;
+      height: 10px;
+      border: 1px solid blue;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #f39c12;
+        transform: scale(1.2);
+      }
+    }
+
+    /* Circle with a blue background for active state */
+    .bgCircle {
+      background-color: blue;
+    }
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .testimonials {
+      margin-top: 60px;
+    }
+
+    .testimonialCards {
+      justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .testimonialCard {
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .testimonialCard {
+      max-width: 100%;
+      padding: 15px;
+    }
+
+    .testimonialCards {
+      flex-direction: column;
+    }
+
+    .quote {
+      font-size: 0.85rem;
+    }
+  }
+}

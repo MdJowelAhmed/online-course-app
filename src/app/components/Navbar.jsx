@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <nav className={`${styles.navbar} container`}>
-      <div className={styles.logo}>Logo</div>
+      <div className={styles.logo}>HealthHive</div>
       <div className={styles.menuIcon} onClick={toggleMenu}>
         {isMenuOpen ? <FaTimes /> : <FaBars />}
       </div>
@@ -34,9 +34,9 @@ const Navbar = () => {
         <li className={styles.dropdown}>
           Instructors <IoIosArrowDown />
           <ul className={styles.subMenu}>
-            <li>John Doe</li>
-            <li>Jane Smith</li>
-            <li>Michael Brown</li>
+            <li>Jowel </li>
+            <li>Ahmed</li>
+            <li>Kamal</li>
           </ul>
         </li>
         <li className={styles.dropdown}>

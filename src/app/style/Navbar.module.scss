@@ -1,103 +1,131 @@
 @import './variables';
 @import './mixins';
 
+/* Navbar main container */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: $white;
-  }
-  
-  .navLinks {
-    list-style: none;
-    display: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: $white;
+  position: relative; /* Ensures proper stacking */
+  z-index: 10;
+}
+
+/* Logo styling */
+.logo {
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+/* Navigation links */
+.navLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  position: relative;
+  background-color: white;
+  padding: 0;
+
+  @media (max-width: 1170px) {
+    display: none; /* Hidden by default on smaller screens */
     flex-direction: column;
-    gap: 1rem;
-    background-color: $white;
     position: absolute;
-    top: 100%;
-    right: 0;
+    top: 100%; /* Position below navbar */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    background-color: $white;
     padding: 1rem;
     border: 1px solid #ddd;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-  
+
     &.navLinksActive {
-      display: flex; // Ensure this makes it visible
+      display: flex; /* Show links when menu is toggled */
     }
   }
-  
-  
-  .menuIcon {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-  
-    @media (max-width: 1170px) {
-      display: block;
-    }
+}
+
+/* Hamburger menu icon */
+.menuIcon {
+  display: none; /* Hidden by default */
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute; /* Position for precise placement */
+  top: 1rem; /* Align near the top */
+  left: 1rem; /* Align near the logo */
+
+  @media (max-width: 1170px) {
+    display: block; /* Show on smaller screens */
   }
-  
-  .shoppingIcon {
-    font-size: 1.5rem;
-    color: #333;
-    cursor: pointer;
-  
-    @media (max-width: 1170px) {
-      display: none;
-    }
+}
+
+/* Shopping cart icon */
+.shoppingIcon {
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+
+  @media (max-width: 1170px) {
+    display: none; /* Hidden on smaller screens */
   }
-  
-  .loginButton {
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  
-    &:hover {
-      background-color: #0056b3;
-    }
+}
+
+/* Login button */
+.loginButton {
+  padding: 0.5rem 1rem;
+  background-color: #287279; /* Primary color */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0056b3; /* Hover state */
   }
-  
-  .dropdown {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .subMenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    list-style: none;
-    padding: 0.5rem 0;
-    min-width: 150px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .subMenu li {
-    padding: 0.5rem 1rem;
-    white-space: nowrap;
-  }
-  
-  .subMenu li:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .dropdown:hover .subMenu {
-    display: block;
-  }
-  
-  .rightSection {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  
+}
+
+/* Dropdown container */
+.dropdown {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative; /* Allows subMenu to position itself */
+}
+
+/* Dropdown submenu */
+.subMenu {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position directly below parent */
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  list-style: none;
+  padding: 0.5rem 0;
+  min-width: 150px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Submenu list items */
+.subMenu li {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+.subMenu li:hover {
+  background-color: #f0f0f0; /* Highlight on hover */
+}
+
+/* Show submenu on hover */
+.dropdown:hover .subMenu {
+  display: block;
+}
+
+/* Right section (shopping icon and login button) */
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

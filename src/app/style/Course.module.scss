@@ -1,62 +1,208 @@
-.container {
-    padding: 2rem;
-    text-align: center;
+/* Main container for spacing */
+.containerC {
+  margin-top: 120px;
+}
+
+/* Title section styling */
+.courseTitle {
+  width: 669px;
+}
+
+/* Header section containing title and description */
+.header {
+  margin-top: 120px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 24px;
   }
-  
-  .courseGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+
+  p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 60px;
   }
-  
-  .card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.2s ease-in-out;
-  
+}
+
+/* Navigation arrow buttons */
+.arrowButtons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+
+  button {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
     &:hover {
-      transform: scale(1.02);
+      background: #f4f4f4;
     }
   }
-  
+}
+
+
+
+/* Slider wrapper for scrolling items */
+.sliderWrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  margin:auto;
+  gap: 1rem;
+  max-width: 1440px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Card styling */
+.card {
+  position: relative;
+  flex: 0 0 100%;
+  background: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: #9998e11a;
+
+    .cardHoverEffect {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
   .cardImage {
     width: 100%;
-    height: 150px;
+    border-radius: 0.5rem;
     object-fit: cover;
   }
-  
+
+  .cardHoverEffect {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    .loveIcon,
+    .cardIcon {
+      font-size: 2.5rem;
+      color: #ff4d4d;
+      background: #ffffff;
+      border-radius: 50%;
+      padding: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        color: #ffffff;
+        background: #ff4d4d;
+      }
+    }
+  }
+
   .cardContent {
-    padding: 1rem;
-  
-    .category {
-      font-size: 0.85rem;
-      color: #999;
-    }
-  
+    margin-top: 0.5rem;
+
     h3 {
-      margin: 0.5rem 0;
-      font-size: 1.2rem;
+      font-size: 20px;
+      margin-top: 16px;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
     }
-  
+
+    p {
+      font-size: 0.9rem;
+      margin: 0.3rem 0;
+    }
+
+    .category {
+      background-color: #cde53333;
+      font-size: 13px;
+      font-weight: 400;
+      padding: 4px;
+      margin: 16px 0;
+    }
+
+    .rating {
+      display: flex;
+      text-align: start;
+      gap: 20px;
+      color: #ff9700;
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .clock {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 12px;
+    }
+
     .footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 1rem;
-      color: #333;
-  
-      .author {
-        font-size: 0.9rem;
+      margin-top: 24px;
+
+      .authorC {
+        display: flex;
+        gap: 16px;
+
+        .authorProfile {
+          height: 30px;
+          width: 20px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .author {
+          font-size: 0.9rem;
+          font-weight: 600;
+        }
       }
-  
+
       .price {
-        font-weight: bold;
-        font-size: 1rem;
-        color: #0070f3;
+        font-weight: 500;
+        font-size: 24px;
       }
     }
   }
-  
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .card {
+    flex: 0 0 48%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    flex: 0 0 30%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .card {
+    flex: 0 0 24%;
+  }
+}

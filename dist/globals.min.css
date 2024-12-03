@@ -1,1 +1,1 @@
-body{font-family:"Poppins",sans-serif;margin:0;padding:0}.container{width:90%;max-width:1170px;margin:auto}/*# sourceMappingURL=globals.min.css.map */
+body{font-family:"Poppins",sans-serif;margin:0;padding:0}.container{width:90%;max-width:1170px;margin:auto}.rating{display:flex;text-align:start;gap:20px;color:#ff9700;font-size:1rem;font-weight:bold}@media(max-width: 768px){.rating{justify-content:center}}/*# sourceMappingURL=globals.min.css.map */

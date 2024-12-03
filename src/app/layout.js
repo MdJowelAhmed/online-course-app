@@ -13,7 +13,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "online-course",
+  title: "HealthHive",
   description: "online course app create for job task",
 };
 

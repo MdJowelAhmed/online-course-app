@@ -6,11 +6,10 @@ import { AiFillStar } from "react-icons/ai";
 import { FaStarHalfStroke } from "react-icons/fa6";
 import { FaLeaf } from "react-icons/fa";
 
-
 const HeroSection = () => {
   return (
     <section className={styles.hero}>
-      <div className={`${styles.containerH} container`} >
+      <div className={`${styles.containerH} container`}>
         {/* Text Section */}
         <div className={styles.textSection}>
           <div className={styles.rating}>
@@ -51,10 +50,10 @@ const HeroSection = () => {
               height={760}
               width={648}
             />
-              {/* Circle with Leaf Icon */}
-        <div className={styles.circleIcon}>
-          <FaLeaf className={styles.icon} />
-        </div>
+            {/* Circle with Leaf Icon */}
+            <div className={styles.circleIcon}>
+              <FaLeaf className={styles.icon} />
+            </div>
             {/* Absolute Positioned Stats */}
             <div className={styles.stats}>
               <div className={styles.number}>

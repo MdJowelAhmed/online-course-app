@@ -37,8 +37,8 @@ $breakpoints: (
 // Mixin for setting font size with fallback for older browsers
 @mixin font-size($size) {
   font-size: $size;
-  -webkit-font-smoothing: antialiased; // For better font rendering in Safari
-  -moz-osx-font-smoothing: grayscale; // For better font rendering in Firefox
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
 }
 
 // Mixin for adding transition

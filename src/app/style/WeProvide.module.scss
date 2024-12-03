@@ -1,73 +1,85 @@
-// Variables for consistent colors, padding, etc.
-$primary-color: #0070f3;
-$secondary-color: #fff;
-$background-color: #f9fafb;
-$text-color: #333;
+@import "./mixins";
+@import "./variables";
 
-// Mixin for flexbox alignment
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-// Container styles for consistent width
-.container {
-  max-width: 1170px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-// Responsive mixin
-@mixin responsive($breakpoint) {
-  @media (max-width: $breakpoint) {
-    @content;
-  }
-}
-
+/* Section for "We Provide" */
 .weProvide {
-  background: $background-color;
-  padding: 40px 20px;
+  margin-top: 150px;
 
-  .contentContainer {
-    @include flex-center;
-    flex-wrap: wrap;
-    gap: 20px;
+  @media (max-width: 768px) {
+    margin-top: 60px;
   }
 
+  /* Container for content inside the section */
+  .contentContainer {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+
+    @media (max-width: 1024px) {
+      flex-direction: column-reverse; /* Reorder for smaller screens */
+      align-items: center;
+    }
+  }
+
+  /* Text content within the section */
   .textContent {
-    flex: 1 1 50%;
+    flex: 1;
+
+    /* Heading for the section */
     h2 {
       font-size: 2rem;
       margin-bottom: 20px;
     }
 
+    /* Features list with icons and descriptions */
     .featuresList {
       list-style: none;
+      padding: 0;
+
       li {
-        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 32px;
         font-size: 1.2rem;
 
-        &.highlighted {
-          color: $primary-color;
+        /* Paragraph within the list items */
+        p {
+          margin-top: 24px;
+        }
 
-          .description {
-            font-size: 1rem;
-            color: $text-color;
-            margin-top: 5px;
-          }
+        /* Check icon for features */
+        .checkIcon {
+          color: green;
+          font-size: 1.2rem;
+          margin-right: 24px;
+          border-radius: 50%;
+        }
+
+        /* Additional styling for the third feature */
+        .third {
+          color: blue;
+          font-size: 1.2rem;
+          margin-right: 24px;
+          border-radius: 50%;
+        }
+
+        /* Description for each feature */
+        .description {
+          font-size: 1rem;
+          color: $text-color;
+          margin-top: 5px;
         }
       }
     }
 
+    /* Button to learn more */
     .learnMoreBtn {
       margin-top: 20px;
       padding: 10px 20px;
-      background-color: $primary-color;
-      color: $secondary-color;
-      border: none;
-      border-radius: 5px;
+      border: 1px solid #000;
+      border-radius: 30px;
       cursor: pointer;
+      color: #000000;
       transition: background-color 0.3s;
 
       &:hover {
@@ -76,30 +88,51 @@ $text-color: #333;
     }
   }
 
+  /* Image content within the section */
   .imageContent {
-    flex: 1 1 40%;
+    flex: 1;
+    text-align: center;
+    width: 621px;
+    height: 600px;
+    padding: 10px;
     position: relative;
 
-    img {
+    /* Responsive image styling */
+    .responsiveImage {
       max-width: 100%;
       border-radius: 10px;
     }
 
-    .badgeIcon {
+    /* Circular icon element */
+    .circleIcon {
       position: absolute;
-      top: 10px;
-      left: 10px;
-      background: $primary-color;
-      color: $secondary-color;
-      padding: 5px 10px;
+      top: 150px;
+      left: -28px;
+      width: 74px;
+      height: 74px;
+      background-color: #287279;
+      border: 4px solid #fff;
       border-radius: 50%;
-    }
-  }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 
-  @include responsive(768px) {
-    .contentContainer {
-      flex-direction: column;
-      text-align: center;
+      @media (max-width: 768px) {
+        top: 100px;
+        left: -20px;
+      }
+    }
+
+    /* Icon inside the circle */
+    .icon {
+      color: #fff;
+      font-size: 40px;
+    }
+
+    @media (max-width: 768px) {
+      order: 1;
+      height: 400px;
     }
   }
 }

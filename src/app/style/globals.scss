@@ -9,4 +9,17 @@ body {
     max-width: 1170px;
     margin: auto;
   }
+  .rating {
+    display: flex;
+    text-align: start;
+    gap: 20px;
+    color: #FF9700;
+    font-size: 1rem;
+    font-weight: bold;
+  
+
+    @media (max-width: 768px) {
+      justify-content: center; 
+    }
+  }
   
